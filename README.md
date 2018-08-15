@@ -13,6 +13,7 @@ Once generated, the `airports.csv` and `earthroutes.csv` files must be uploaded 
 ## Operation
 
 1. Clone this repo to a local directory
+1. Install using `npm install`
 1. Ensure that `extra_airports.csv` contains data for airports that OpenFlights.org does ***not*** know about
 1. Open a terminal and change into the local report directory
 1. If running within an intranet, ensure that the NodeJS proxy settings are correct for external network access
@@ -26,7 +27,7 @@ Once generated, the `airports.csv` and `earthroutes.csv` files must be uploaded 
    Only the 3-character IATA location code is considered.  The 4-character ICAO location code is not used here (with hindsight, it would have been better to use both types of location code, but anyway...)
 1. For each location code referenced in routes.dat, check that airports.dat contains a reference to that airport
 1. If routes.dat references an airport that is not listed in airports.dat, then use OpenFlights.org's API to request that information (yes, airports.dat is not consistent even with OpenFlight's own data...)
-1. The OpenFlights.org API will always return a JSON structure and HTTP 200, even if it has not data for that airport.  The `airports` array in the returned JSON object will contain zero or more elements
+1. The OpenFlights.org API will always return a JSON object and HTTP 200, even if no data can be found for that airport.  The `airports` array in the returned JSON object will contain zero or more elements
     1. If the `airports` array contains 1 or more elements, arbitrarily select the first element and add it to our list of airports
     1. If the `airports` array is empty, then OpenFlights.org knows nothing about this airport.  In this case, this missing data can be supplied by manually entering it into the `extra_airports.csv` file
     1. If the data is also missing from `extra_airports.csv`, then we genuinely have no information about this airport
