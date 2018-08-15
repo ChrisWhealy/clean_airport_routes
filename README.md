@@ -13,9 +13,9 @@ Once generated, the `airports.csv` and `earthroutes.csv` files must be uploaded 
 ## Operation
 
 1. Clone this repo to a local directory
+1. Open a terminal and change into that local directory
 1. Install using `npm install`
 1. Ensure that `extra_airports.csv` contains data for airports that OpenFlights.org does ***not*** know about
-1. Open a terminal and change into the local report directory
 1. If running within an intranet, ensure that the NodeJS proxy settings are correct for external network access
 1. Run `node app.js`
 1. The files `airlines.csv` and `earthroutes.csv` will be generated and appear in the local directory
