@@ -1,10 +1,10 @@
 # TechEd 2018
 
-## Generate Data Airport and Route Data for the Space Flight Data Model
+## Generate Consistent Airport and Route Data for the Space Flight Data Model
 
-**THIS APP IS DESIGNED TO RUN FROM YOUR LOCAL MACHINE, *NOT* IN THE CLOUD!**
+This app generates CSV files for use in the Core Data Services data model used by <https://github.com/SAP/cloud-sample-spaceflight>.  This data is obtained from <https://openflights.org>
 
-Unfortunately, the data supplied by the OpenFlights.org source files is not entirely consistent, and if the data is not cleaned up, the HANA database will throw up errors when creating graphs and calculation views.
+Unfortunately, the data supplied by the OpenFlights.org source files is not entirely consistent, and if it is not cleaned up, the HANA database will throw up errors when creating graphs and calculation views.
 
 This NodeJS app generates consistent versions of the files `airport.csv` and `earthroute.csv` suitable for the TechEd 2018 Space Travel Agency data model.
 
