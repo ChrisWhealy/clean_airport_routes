@@ -51,5 +51,7 @@ The file `extra_airports.csv` contains manually defined airport information to f
 
 ### File `extra_routes.csv`
 
-The file `extra_routes.csv` contains manually information about direct flights flown between missing airports.  It is important to add as much route information as you can, otherwise the HANA graph analysis of this data will shown orphaned vertices (I.E. airports that have no flights in or out of them)
+The file `extra_routes.csv` contains manually defined information about direct flights flown between missing airports.
+
+It is important to add as much route information as you can, otherwise the HANA graph analysis of this data will show orphaned vertices (I.E. airports that have no flights in or out of them)
 
