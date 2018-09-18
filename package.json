@@ -1,7 +1,13 @@
 {
   "name": "clean-airports-routes",
-  "version": "1.0.0",
+  "description": "The airport and route information supplied by OpenFlights.org is not consistent with itself.\nThis program both cleans up the supplied data and allows extra airport and route information to be added.\nThis program outputs two mutually consistent CSV files called airports.csv and earthroutes.csv",
+  "version": "1.0.2",
   "dependencies": {
     "request": "2.88.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChrisWhealy/clean_airport_routes.git"
+  },
+  "license": "ISC"
 }

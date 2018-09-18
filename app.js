@@ -25,7 +25,8 @@ const local_file_airports = local_path + "airports.dat"
 const local_file_routes   = local_path + "routes.dat"
 const local_filename      = iata3 => local_path + iata3 + ".json"
 
-const local_file_extras   = "extra_airports.csv"
+const local_file_extras_airports = "extra_airports.csv"
+const local_file_extras_routes   = "extra_routes.csv"
 
 const output_csv_airports = "airports.csv"
 const output_csv_routes   = "earthroutes.csv"
@@ -135,10 +136,10 @@ fetch_file(openflights.urls.airports, local_file_airports)
 
         // Concatenate the existing airports array with both the data retrieved for the missing airports and the data
         // from the extra airports file
-        var extra_airports = utils.csv_to_object_array(local_file_extras, openflights.csv_properties.extra_airports, true)
+        var extra_airports = utils.csv_to_object_array(local_file_extras_airports, openflights.csv_properties.extra_airports, true)
 
         console.log("%i airports added to airports_csv array by reading OpenFlights API", airport_data_via_api.length)
-        console.log("%i airports added to airports_csv array from extra_airports file", extra_airports.length)
+        console.log("%i airports added to airports_csv array from extra_airports.csv file", extra_airports.length)
 
         var all_airports = airports_csv.concat(airport_data_via_api).concat(extra_airports)
         var find_airport = utils.find_kv_in_obj_array(all_airports)
@@ -199,7 +200,10 @@ fetch_file(openflights.urls.airports, local_file_airports)
 
         // -------------------------------------------------------------------------------------------------------------
         // Write out routes.csv
-        utils.write_as_csv_file(clean_routes_csv, output_csv_routes, true)
+        var extra_routes = utils.csv_to_object_array(local_file_extras_routes, openflights.csv_properties.extra_routes, true)
+        console.log("\n%i routes added to clean_routes_csv array from extra_routes.csv file", extra_routes.length)
+
+        utils.write_as_csv_file(clean_routes_csv.concat(extra_routes), output_csv_routes, true)
         // -------------------------------------------------------------------------------------------------------------
 
         // Pack up and go home...

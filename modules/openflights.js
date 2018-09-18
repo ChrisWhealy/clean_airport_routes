@@ -28,11 +28,16 @@ const dat_properties = {
 // ---------------------------------------------------------------------------------------------------------------------
 // Mapping between the columns in a raw .dat file and the objects that will later be output as the CSV files used to
 // populate the TechEd data model
-// The "query_property" is used only when extract data from the response to a direct API request for airport information
 const csv_properties = {
   "extra_airports" : [
     "IATA3", "Name", "City", "Country", "Elevation", "Latitude", "Longitude"
   ]
+, "extra_routes" : [
+    "ID", "StartingAirport", "DestinationAirport", "Airline", "Distance"
+  , "Equipment1", "Equipment2", "Equipment3", "Equipment4", "Equipment5"
+  , "Equipment6", "Equipment7", "Equipment8", "Equipment9"
+  ]
+// The "query_property" is used only when extracting data from the response to a direct API request for airport information
 , "airports" : [
     {"dat_property" : "iata"      , "csv_property" : "IATA3"     , "query_property" : "iata"      }
   , {"dat_property" : "name"      , "csv_property" : "Name"      , "query_property" : "name"      }
