@@ -55,3 +55,5 @@ The file `extra_routes.csv` contains manually defined information about direct f
 
 It is important to add as much route information as you can, otherwise the HANA graph analysis of this data will show orphaned vertices (I.E. airports that have no flights in or out of them)
 
+You must ensure that `extra_routes.csv` does not contain any duplicate route information from `earthroutes.csv`.  If it does, the HANA database load will fail with a `Database error 301` (meaning "Duplicate primary key encountered").
+
