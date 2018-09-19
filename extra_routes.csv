@@ -1,3 +1,3 @@
 ID,StartingAirport,DestinationAirport,Airline,Distance,Equipment1,Equipment2,Equipment3,Equipment4,Equipment5,Equipment6,Equipment7,Equipment8,Equipment9
-ALAAOXKC,SVO,ALA,KC,1132,319,,,,,,,,
-AOXALAKC,ALA,SVO,KC,1132,319,,,,,,,,
+ALAAOXKC,ALA,AOX,KC,1132,319,,,,,,,,
+AOXALAKC,AOX,ALA,KC,1132,319,,,,,,,,
